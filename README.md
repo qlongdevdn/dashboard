@@ -3,7 +3,7 @@
 This is the system dashboard using the services provided by DevDaNang systems
 
 ## Installation
-Using ReactJs and TypeScript
+Using ReactJs and TypeScript Frontend
 
 ```bash
 npm install
