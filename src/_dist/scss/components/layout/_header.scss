@@ -1,0 +1,65 @@
+.header-container {
+    width: 100%;
+
+    header {
+        background-color: $color-white !important;
+        max-height: 70px;
+    }
+
+    .navbar--left {
+        border: none !important;
+        background-color: $color-white !important;
+
+        .MuiDrawer-paperAnchorLeft {
+            border-right: 1px solid $color-gray;
+        }
+    }
+
+    .navbar--inside {
+        display: flex;
+        justify-content: space-between !important;
+        height: 20px;
+
+        img {
+            padding-left: 8px;
+            width: 150px;
+        }
+    }
+
+    .header__menu {
+        width: 100%;
+        padding: 0 0 0 5px;
+
+        .MuiIconButton-root,
+        .MuiIconButton-root:hover {
+            color: $color-white;
+            background-color: $color-white-hidden;
+        }
+
+        &--logo {
+            margin-top: 18px;
+        }
+
+        &--icon {
+            margin-top: 10px;
+            width: 32px !important;
+        }
+
+        &--icon-header {
+            margin: 10px 0px 0 0;
+        }
+
+        &--logo-header {
+            margin-left: 20px;
+            width: 150px !important;
+        }
+
+        &--header {
+            margin: 0px 5px 15px 0px;
+        }
+
+        &--icon-navbar {
+            margin-left: 30px;
+        }
+    }
+}
