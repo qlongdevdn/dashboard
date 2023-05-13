@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { ROUTER_PATH } from './path';
 import { lazy } from 'react';
-// import DashboardLayout from 'src/layout/dashboard';
 
 // Pages
 //// Auth
