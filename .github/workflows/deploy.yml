@@ -19,7 +19,6 @@ jobs:
         with:
           node-version: 19
           cache: 'npm'
-          cache-dependency-path: develop/package-lock.json
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
