@@ -13,5 +13,6 @@ export default defineConfig({
                 additionalData: '@import "./src/_dist/scss/abstracts/_variables.scss";'
             }
         }
-    }
+    },
+    base: '/dashboard/'
 });
