@@ -1,4 +1,4 @@
-name: Deploy dashboard into Github Pages  
+name: Deploy
 
 on:
   push:
@@ -12,22 +12,18 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: 19
-          cache: 'npm'
+          node-version: 16
 
-      - name: Install libary and plugin in project
-        uses: npm install
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
 
-      - name: Build project by vite and npm
+      - name: Build project
         run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
