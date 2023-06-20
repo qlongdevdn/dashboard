@@ -1,6 +1,15 @@
 @import './components/all';
 @import './abstracts/all';
+@import url('https://fonts.cdnfonts.com/css/rubik');
 
 body {
-    font-family: 'Nunito';
+    height: 100%;
+    width: 100%;
+    overflow: unset;
+    margin: 0;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
 }

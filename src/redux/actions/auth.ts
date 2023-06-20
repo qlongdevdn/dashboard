@@ -1,6 +1,6 @@
 import { AxiosError } from 'axios';
 import { createAction, createAsyncAction } from 'typesafe-actions';
-import { userLoginRequest, userLoginSuccess } from '../../type/auth.type';
+import { userLoginRequest, userLoginSuccess } from '../../types/auth.type';
 
 export const loginRequest = createAsyncAction('LOG_USERS_REQUEST', 'LOG_USERS_SUCCESS', 'LOG_USERS_FAILURE')<userLoginRequest, userLoginSuccess, AxiosError>();
 

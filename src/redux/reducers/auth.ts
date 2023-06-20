@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { createReducer } from 'typesafe-actions';
 
-import { InitialAuth } from '../../type/auth.type';
+import { InitialAuth } from '../../types/auth.type';
 import { loginRequest } from '../actions/auth';
 
 const initialAuth: InitialAuth = {
