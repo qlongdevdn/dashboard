@@ -1,8 +1,9 @@
 .card-container {
-    width: 50%;
+    width: 80%;
 }
 
 .body-container {
     background-color: $color-main;
+    display: flex;
+    justify-content: space-around;
 }
-

@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import storage from 'redux-persist/lib/storage';
 
-import appReducer from './reducers';
+import appReducer from './combineReducer';
 import appSaga from './sagas';
 
 const persistConfig = {
