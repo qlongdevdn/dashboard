@@ -1,4 +1,4 @@
 export type Action = {
-	type: string;
-	payload: string[] | any;
+    type: string;
+    payload: string[] | any;
 };

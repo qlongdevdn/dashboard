@@ -8,10 +8,10 @@ import appReducer from './combineReducer';
 import appSaga from './sagas';
 
 const persistConfig = {
-	key: 'root',
-	storage,
-	whitelist: ['auth, user'],
-	blacklist: ['saleOrder', 'draft'],
+    key: 'root',
+    storage,
+    whitelist: ['auth, user'],
+    blacklist: ['saleOrder', 'draft']
 };
 
 // Create the saga middleware
@@ -22,7 +22,7 @@ const middleware = [sagaMiddleware];
 
 // Add the Redux dev tools and middleware code together
 const bindMiddleware = (middleware: Middleware[]) => {
-	return composeWithDevTools(applyMiddleware(...middleware));
+    return composeWithDevTools(applyMiddleware(...middleware));
 };
 
 // add all reducers
