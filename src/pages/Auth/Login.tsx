@@ -27,13 +27,13 @@ const Login = () => {
     return (
         <div className="body-container">
             <Card className="card-container">
-                <Grid container spacing={1}>
+                <Grid className="child-container" container>
                     <Grid item xs={6}>
-                        <CardContent>
-                            <img className="background-auth" src={urlBackground} alt="Image random from unsplash" />
+                        <CardContent className="background-auth-container"  sx={{  backgroundImage: `url(${urlBackground})`}} alt-img="Image random from unsplash" >
+                            {/* <img className="background-auth" src={urlBackground} alt="Image random from unsplash" /> */}
                         </CardContent>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={6} className='form-auth'>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                 Word of the Day

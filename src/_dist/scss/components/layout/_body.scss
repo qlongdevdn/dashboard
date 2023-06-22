@@ -8,5 +8,22 @@
     .card-container {
         width: 80%;
         height: 90%;
+        position: relative;
+
+        .child-container {
+            height: 100%;
+            position: absolute;
+            .background-auth-container{
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+            .form-auth{
+                background-color: $color-second;
+                color: $color-white;
+            }
+        }
     }
 }
