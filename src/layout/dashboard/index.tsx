@@ -1,5 +1,5 @@
 import Header from '../Header/Header';
-import Footer from '../Footer';
+import Footer from '../Footer/Footer';
 import { isAuthenticated } from '../../redux/selectors/auth.selector';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

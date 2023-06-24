@@ -2,14 +2,28 @@ import React, { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRandomBackgroundRequest } from 'src/redux/actions/supports.action';
 import { getRandomBackgroundDetail } from 'src/redux/selectors/supports.selector';
+// import { useForm } from 'react-hook-form';
+// import { userLoginRequest } from 'src/types/auth.type';
+import { TextField } from '@mui/material';
+import Copyright from 'src/layout/Footer/Copyright';
+
 const Login = () => {
     const dispatch = useDispatch();
     const [urlBackground, seturlBackgroud] = useState<string>();
     const objBackground = useSelector(getRandomBackgroundDetail);
+    // const {
+    //     control,
+    //     formState: { errors },
+    //     handleSubmit,
+    //     setValue,
+    //     getValues,
+    //     watch,
+    //     clearErrors,
+    //     reset
+    // } = useForm<userLoginRequest>();
 
     useEffect(() => {
         const url = process.env.API_RANDOM_BACKGROUD;
@@ -26,31 +40,24 @@ const Login = () => {
 
     return (
         <div className="body-container">
-            <Card className="card-container">
+            <Card className="card-container" sx={{ mt: 1 }}>
                 <Grid className="child-container" container>
-                    <Grid item xs={6}>
-                        <CardContent className="background-auth-container"  sx={{  backgroundImage: `url(${urlBackground})`}} alt-img="Image random from unsplash" >
-                            {/* <img className="background-auth" src={urlBackground} alt="Image random from unsplash" /> */}
-                        </CardContent>
+                    <Grid item xs={8}>
+                        <CardContent className="background-auth-container" sx={{ backgroundImage: `url(${urlBackground})` }} alt-img="Image random from unsplash"></CardContent>
                     </Grid>
-                    <Grid item xs={6} className='form-auth'>
-                        <CardContent>
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-                            <Typography variant="h5" component="div"></Typography>
-                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                adjective
-                            </Typography>
-                            <Typography variant="body2">
-                                well meaning and kindly.
-                                <br />
-                                {'"a benevolent smile"'}
-                            </Typography>
+                    <Grid item xs={4} className="form-auth">
+                        <CardContent className="form-auth form-auth__form-login">
+                            <div className="form-auth__logo-auth">
+                                <Grid item className="logo-auth" sx={{ mb: 5 }} />
+                                <h2>Log in</h2>
+                            </div>
+                            <TextField color="secondary" className="form-auth__form-input" placeholder="Please enter your email" label="Email" sx={{ mb: 4 }} type="email" />
+                            <TextField className="form-auth__form-input" placeholder="Please enter your password" label="Password" type="password" />
                         </CardContent>
                     </Grid>
                 </Grid>
             </Card>
+            <Copyright sx={{ mb: 1 }} />
         </div>
     );
 };
