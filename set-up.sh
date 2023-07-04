@@ -1,0 +1,2 @@
+cd keystore
+./generator.sh
