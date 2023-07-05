@@ -2,10 +2,12 @@ node_modules/
 .env
 keystore/**
 !keystore/generator.sh
+!keystore/ssl_key.sh
 !keystore/admin.txt
 package-lock.json
 public/images/*
 public/imagesOfMessages/*
+public/data/*
 cert/*
 .gitlab-ci.yml
 cert.pem

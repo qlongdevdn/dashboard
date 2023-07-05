@@ -9,17 +9,21 @@ const {
     // CERT_CA_FILE,
 } = require('./src/config/app.config');
 
+// Mongo connection
+require('./src/services/db.service');
+
 // Variable
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = APP_PORT || 8001;
 const path = require('path');
 let server;
-
+let APP_HTTP;
 //HTTP SSL
 if (MODE_DEPLOY === 'production') {
     const https = require('https');
     const fs = require('fs');
+    APP_HTTP = 'https://'
     server = https.createServer(
         {
             key: fs.readFileSync(path.join(DIRNAME, KEY_FILE)),
@@ -32,6 +36,7 @@ if (MODE_DEPLOY === 'production') {
     // HTTP NO SSL
     const http = require('http');
     server = http.createServer(app);
+    APP_HTTP = 'http://'
 }
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -60,7 +65,9 @@ app.use(compression());
 //Routes
 const routes = require('./src/routes/app.route');
 routes(app);
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 server.listen(PORT, () => {
-    console.log(`Server started at ${APP_URL}:${PORT}`);
+    console.log(`Server started at ${APP_HTTP}${APP_URL}:${PORT}`);
 });

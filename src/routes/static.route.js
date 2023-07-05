@@ -4,6 +4,6 @@ const router = express.Router();
 
 // Router Controller
 // Router GUI
-router.get('/introduce', [StaticController.getUI]);
+router.get('/', [StaticController.getUI]);
 
 module.exports = router;
